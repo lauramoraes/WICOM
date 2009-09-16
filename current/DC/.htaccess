@@ -1,0 +1,6 @@
+AuthName tilecom
+AuthType Basic
+AuthUserFile /afs/cern.ch/user/t/tilecom/public/www/WICOM/current/DC/.users
+
+require valid-user
+

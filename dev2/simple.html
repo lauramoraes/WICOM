@@ -1,0 +1,36 @@
+<HTML>
+<HEAD>
+	<TITLE>JavaScript Toolbox - Calendar Popup To Select Date</TITLE>
+	<SCRIPT LANGUAGE="JavaScript" SRC="./js/CalendarPopup.js"></SCRIPT>
+	<SCRIPT LANGUAGE="JavaScript">
+	var dt=new Date();
+	var today=(dt.getMonth()+1)+"/"+(dt.getDate()+1)+"/"+dt.getFullYear();
+	var cal = new CalendarPopup();
+	cal.setYearSelectStartOffset(2);
+	cal.showNavigationDropdowns();
+	cal.addDisabledDates(today, null);
+	var cal2 = new CalendarPopup();
+	cal2.setYearSelectStartOffset(2);
+	cal2.showNavigationDropdowns();
+	</SCRIPT>
+</HEAD>
+<BODY>
+
+<FORM NAME="dateForm">
+<table>
+<tr>
+<th>From :</th><td><INPUT TYPE="text" NAME="fromDate" VALUE="" SIZE=13></td>
+<td>
+<A HREF="#"
+onClick="cal.select(document.forms['dateForm'].fromDate,'anchor1','dd/MM/yyyy'); return false;"
+   NAME="anchor1" ID="anchor1">select</A></td>
+</tr><tr><th>To:</th><td><INPUT TYPE="text" NAME="toDate" VALUE="" SIZE=13></td>
+<td><A HREF="#"
+onClick="cal2.select(document.forms['dateForm'].toDate,'anchor2','dd/MM/yyyy'); return false;"
+   NAME="anchor2" ID="anchor2">select</A></td>
+</tr>
+</table>
+</FORM>
+<div name="testdiv1"></div>
+</BODY>
+</HTML>
